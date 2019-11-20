@@ -14,8 +14,6 @@ class Operaracao {
 // Áreas de inserção do JavaScript
 let r1=document.getElementById("row1")
 let r2=document.getElementById("row2")
-let inf=document.getElementById("infor")
-let operacoes=document.getElementById("operacoes")
 
 
 // Gera DashBoard Principal
@@ -25,7 +23,6 @@ for(let s of servicos) {
 if (s.status === "off") {
 
 let div1 = document.createElement('div');
-div1.setAttribute("class","col-4")
 div1.setAttribute("class","m-4")
 let card = document.createElement("div");
 card.setAttribute("class","card");
@@ -50,14 +47,9 @@ bod.appendChild(serv);
 bod.appendChild(stat);
 card.appendChild(bod)
 div1.appendChild(card);
-if (s.id <= 3) {
-  r1.appendChild(div1);
-  } else {
-    r2.appendChild(div1);
-  }
+r1.appendChild(div1);
 } else {
   let div1 = document.createElement('div');
-div1.setAttribute("class","col-4")
 div1.setAttribute("class","m-4")
 let card = document.createElement("div");
 card.setAttribute("class","card");
@@ -75,20 +67,15 @@ let botao = document.createElement("span");
 botao.setAttribute("class","badge")
 botao.setAttribute("class","badge-success");
 botao.textContent=s.status.toUpperCase();
- botao.style.padding="5px";
+botao.style.padding="5px";
 botao.style.borderRadius="7px";
 stat.appendChild(botao)
 bod.appendChild(serv);
 bod.appendChild(stat);
 card.appendChild(bod);
 div1.appendChild(card);
-if (s.id <= 3) {
-  r1.appendChild(div1);
-  } else {
-    r2.appendChild(div1);
-  }
+r1.appendChild(div1);
 }
-
 }
 })
 
@@ -113,7 +100,7 @@ p1.style.marginBottom = "2rem";
 carta.appendChild(p1);
 let tab=document.createElement("table");
 p1.appendChild(tab)
-tab.setAttribute("class","table-dark");
+tab.setAttribute("class","table-info");
 tab.setAttribute("id","tabela")
 let trp=document.createElement("tr");
 tab.appendChild(trp);
@@ -159,7 +146,7 @@ tr1.appendChild(th12);
 tr1.appendChild(th13);
 tr1.appendChild(th14);
 }
-inf.appendChild(carta)
+r2.appendChild(carta)
 }
 })
 
@@ -171,8 +158,8 @@ se.listar().then(servicos => {
 let tabel=document.createElement("table");
 tabel.setAttribute("class","table");
 tabel.setAttribute("class","table-dark");
+tabel.style.marginTop ="4rem"
 tabel.setAttribute("id","operar1")
-tabel.style.width="100%"
 let thead1=document.createElement("thead");
 tabel.appendChild(thead1);
 let tr2=document.createElement("tr")
@@ -226,5 +213,5 @@ for(se of servicos) {
   corpot.appendChild(tr31)
 }
 tabel.appendChild(corpot)
-operacoes.appendChild(tabel)
+r2.appendChild(tabel)
 })
