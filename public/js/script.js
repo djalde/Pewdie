@@ -93,7 +93,7 @@ r1.appendChild(div1);
 
 // GeraDashBoard secundario, informações do Pc
 fetch(`../api/`)
-.then(djalde => djalde.json())
+.then(result => result.json())
 .then(json => gerar(json));
 function gerar(message) {
 let carta=document.createElement("div");
