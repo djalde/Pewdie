@@ -28,6 +28,14 @@ services:
     ports:
       - 3306:3306
 
+  adminer:
+    image: adminer:4.7.5
+    restart: always
+    networks:
+      - app-tier
+    ports:
+      - 8081:8080
+
 
 
 networks:
