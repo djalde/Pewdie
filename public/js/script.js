@@ -1,26 +1,3 @@
-
-/*const URL_TO_FETCH = '../api/index.php'; fetch(URL_TO_FETCH)
-.then(function(response) { 
-  response.text()
-  .then(function(result){ 
-    console.log(result); 
-  })
-})
-.catch(function(err) { console.error(err); });*/
-
-class Operaracao {
-  constructor(url){
-      this.url = url;
-  }
-
-  listar(){
-      return fetch(this.url, {
-          method: "GET"
-      }).then(resposta => resposta.json());
-  }
-}
-
-
 // Áreas de inserção do JavaScript
 let r1=document.getElementById("row1")
 let r2=document.getElementById("row2")
@@ -167,9 +144,9 @@ r2.appendChild(carta)
 
 
 // Gera Painel de operacoes (liga/desliga/reinicia)
-
-let se= new Operaracao("https://my-json-server.typicode.com/djalde/jsnserver/servicos");
-se.listar().then(servicos => {
+fetch('../api/geradash1.php')
+.then(servicos => servicos.json())
+.then(servicos => {
 let tabel=document.createElement("table");
 tabel.setAttribute("class","table");
 tabel.setAttribute("class","table-dark");
