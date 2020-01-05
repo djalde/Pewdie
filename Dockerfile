@@ -9,3 +9,4 @@ RUN apt-get install bind9 -y
 RUN apt-get install isc-dhcp-server -y
 RUN apt-get install nfs-kernel-server nfs-common -y
 RUN apt-get install iproute2 -y
+RUN apt-get install iputils-ping -y

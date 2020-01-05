@@ -27,8 +27,9 @@ let r2=document.getElementById("row2")
 
 
 // Gera DashBoard Principal
-let p= new Operaracao("https://my-json-server.typicode.com/djalde/jsnserver/servicos")
-p.listar().then(servicos => {
+fetch('../api/geradash1.php').
+then(servicos => servicos.json())
+.then(servicos => {
 for(let s of servicos) {
 if (s.status === "off") {
 
