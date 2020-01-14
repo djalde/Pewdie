@@ -25,6 +25,7 @@ let stat = document.createElement("h2");
 stat.setAttribute("class","card-title");
 stat.style.textAlign="center";
 let botao = document.createElement("span");
+botao.setAttribute("id",s.name+"1")
 botao.setAttribute("class","badge")
 botao.setAttribute("class","badge-danger");
 botao.textContent=s.status.toUpperCase();
@@ -54,6 +55,7 @@ stat.style.textAlign="center";
 let botao = document.createElement("span");
 botao.setAttribute("class","badge")
 botao.setAttribute("class","badge-success");
+botao.setAttribute("id",s.name+"1");
 botao.textContent=s.status.toUpperCase();
 botao.style.padding="5px";
 botao.style.borderRadius="7px";
@@ -178,6 +180,8 @@ for(se of servicos) {
   botao1.setAttribute("type","button");
   botao1.setAttribute("class","btn");
   botao1.setAttribute("class","btn-outline-success");
+  botao1.setAttribute("onclick","liga(this.id)")
+  botao1.setAttribute("id",se.name)
   if (se.name == "apache") {
     botao1.setAttribute("disabled","disabled")
   }
@@ -191,6 +195,8 @@ for(se of servicos) {
   botao2.setAttribute("type","button");
   botao2.setAttribute("class","btn");
   botao2.setAttribute("class","btn-outline-danger");
+  botao2.setAttribute("onclick","desliga(this.id)")
+  botao2.setAttribute("id",se.name)
   if (se.name == "apache") {
     botao2.setAttribute("disabled","disabled")
   }
@@ -203,3 +209,17 @@ for(se of servicos) {
 tabel.appendChild(corpot)
 r2.appendChild(tabel)
 })
+
+function liga(id) {
+  fetch(`create-liga-service.php/?name=${id}`)
+  let some=document.getElementById(id+'1')
+  some.setAttribute("class","badge-success");
+  some.innerHTML="on"
+
+}
+function desliga(id) {
+  fetch(`create-liga-service.php/?name=${id}`)
+    let some=document.getElementById(id+'1')
+    some.setAttribute("class","badge-danger");
+    some.innerHTML="off"
+  }
