@@ -178,6 +178,9 @@ for(se of servicos) {
   botao1.setAttribute("type","button");
   botao1.setAttribute("class","btn");
   botao1.setAttribute("class","btn-outline-success");
+  if (se.name == "apache") {
+    botao1.setAttribute("disabled","disabled")
+  }
   let texto21=document.createElement("h2");
   texto21.textContent="UP";
   botao1.appendChild(texto21);
@@ -188,20 +191,13 @@ for(se of servicos) {
   botao2.setAttribute("type","button");
   botao2.setAttribute("class","btn");
   botao2.setAttribute("class","btn-outline-danger");
+  if (se.name == "apache") {
+    botao2.setAttribute("disabled","disabled")
+  }
   let texto22=document.createElement("h2");
   texto22.textContent="Down";
   botao2.appendChild(texto22);
   tr31.appendChild(tdbotao2);
-  let tdbotao3=document.createElement("td");
-  let botao3=document.createElement("button")
-  tdbotao3.appendChild(botao3);
-  botao3.setAttribute("type","button");
-  botao3.setAttribute("class","btn");
-  botao3.setAttribute("class","btn-outline-primary");
-  let texto23=document.createElement("h2");
-  texto23.textContent="Reset";
-  botao3.appendChild(texto23);
-  tr31.appendChild(tdbotao3);
   corpot.appendChild(tr31)
 }
 tabel.appendChild(corpot)
