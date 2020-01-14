@@ -2,6 +2,16 @@
 let r1=document.getElementById("row1")
 let r2=document.getElementById("row2")
 
+//Coloca relógio no <nav>
+function relogio() {
+  var d = new Date();
+  var t = d.toLocaleTimeString();
+ document.getElementById("relogio").innerHTML=t;
+ }
+
+
+setInterval(relogio,1000);
+
 
 // Gera DashBoard Principal
 fetch('../api/geradash1.php').
