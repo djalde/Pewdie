@@ -6,6 +6,7 @@ function create($name) {
   $sql = "INSERT INTO ligaservicos (name) VALUES ('${name}');";
   
   try {
+    $connection->exec("use dashboard;");
     $connection->exec($sql);
     return $connection->lastInsertId();
   } catch(PDOExecption $e) { 

@@ -182,9 +182,6 @@ for(se of servicos) {
   botao1.setAttribute("class","btn-outline-success");
   botao1.setAttribute("onclick","liga(this.id)")
   botao1.setAttribute("id",se.name)
-  if (se.name == "apache") {
-    botao1.setAttribute("disabled","disabled")
-  }
   let texto21=document.createElement("h2");
   texto21.textContent="UP";
   botao1.appendChild(texto21);
@@ -196,10 +193,7 @@ for(se of servicos) {
   botao2.setAttribute("class","btn");
   botao2.setAttribute("class","btn-outline-danger");
   botao2.setAttribute("onclick","desliga(this.id)")
-  botao2.setAttribute("id",se.name)
-  if (se.name == "apache") {
-    botao2.setAttribute("disabled","disabled")
-  }
+  botao2.setAttribute("id",se.name);
   let texto22=document.createElement("h2");
   texto22.textContent="Down";
   botao2.appendChild(texto22);
@@ -211,15 +205,15 @@ r2.appendChild(tabel)
 })
 
 function liga(id) {
-  fetch(`create-liga-service.php/?name=${id}`)
+  fetch(`/api/insere-liga-servico.php/?name=${id}`)
   let some=document.getElementById(id+'1')
   some.setAttribute("class","badge-success");
-  some.innerHTML="on"
+  some.innerHTML="ON"
 
 }
 function desliga(id) {
-  fetch(`create-liga-service.php/?name=${id}`)
+  fetch(`/api/insere-desliga-servico.php/?name=${id}`)
     let some=document.getElementById(id+'1')
     some.setAttribute("class","badge-danger");
-    some.innerHTML="off"
+    some.innerHTML="OFF"
   }
