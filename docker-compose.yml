@@ -1,14 +1,14 @@
-version: "3"
+version: "2"
 
 services:
   web:
-    container_name: debian
-    image: debian
+    container_name: web
+    image: pewdie/php:7.3-apache
     build: .
     networks:
       - app-tier
     ports:
-      - 8080:80
+      - 8082:80
     volumes:
       - ./:/var/www/html/
     depends_on:

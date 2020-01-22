@@ -3,7 +3,7 @@ require_once('database.php');
 $connection = connect();
 function create($name) {
   global $connection;
-  $sql = "INSERT INTO desligaservicos (name) VALUES ('${name}');";
+  $sql = "INSERT INTO desligaservicos (name,time) VALUES ('${name}',now());";
   
   try {
     $connection->exec("use dashboard;");

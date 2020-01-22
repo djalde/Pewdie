@@ -3,7 +3,7 @@ require_once('database.php');
 $connection = connect();
 function create($name) {
   global $connection;
-  $sql = "INSERT INTO ligaservicos (name) VALUES ('${name}');";
+  $sql = "INSERT INTO ligaservicos (name,time) VALUES ('${name}', now());";
   
   try {
     $connection->exec("use dashboard;");

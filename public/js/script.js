@@ -8,10 +8,11 @@ function relogio() {
   var t = d.toLocaleTimeString();
  document.getElementById("relogio").innerHTML=t;
  }
-
-
 setInterval(relogio,1000);
 
+
+// Criar tabelas mysql
+fetch('../api/inicia-mysql.php')
 
 // Gera DashBoard Principal
 fetch('../api/geradash1.php').

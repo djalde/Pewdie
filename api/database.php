@@ -9,6 +9,3 @@ function connect(){
   }
 }
 
-$x=connect();
-$schema=file_get_contents('schema.sql');
-$x->exec($schema);
