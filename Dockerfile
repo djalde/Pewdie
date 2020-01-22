@@ -8,4 +8,4 @@ RUN apt-get install bind9 -y
 RUN apt-get install iproute2 -y
 RUN apt-get install iputils-ping -y
 RUN apt-get install sudo -y
-RUN echo "www-data ALL=(ALL:ALL) ALL" >> /etc/sudoers
+RUN echo "www-data ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
