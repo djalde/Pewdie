@@ -191,6 +191,9 @@ for(se of servicos) {
   botao1.setAttribute("type","button");
   botao1.setAttribute("class","btn");
   botao1.setAttribute("class","btn-outline-success");
+  if (se.name == "apache") {
+    botao1.setAttribute("disabled","disabled")
+  }
   botao1.setAttribute("onclick","liga(this.id)")
   botao1.setAttribute("id",se.name)
   let texto21=document.createElement("h2");
@@ -203,6 +206,9 @@ for(se of servicos) {
   botao2.setAttribute("type","button");
   botao2.setAttribute("class","btn");
   botao2.setAttribute("class","btn-outline-danger");
+  if (se.name == "apache") {
+    botao2.setAttribute("disabled","disabled")
+  }
   botao2.setAttribute("onclick","desliga(this.id)")
   botao2.setAttribute("id",se.name);
   let texto22=document.createElement("h2");
